@@ -21,7 +21,7 @@ async function getProducts() {
         compare_at_price: '1299',
         vendor: 'Manyvar',
         badge_text: 'Wedding Special',
-        image: 'https://plus.unsplash.com/premium_photo-1682090786689-741d60a11384',
+        image: 'https://plus.unsplash.com/  premium_photo-1682090786689-741d60a11384',
         second_image: 'https://plus.unsplash.com/premium_photo-1682090781379-4d177df45267'
      },
      */
@@ -36,9 +36,12 @@ async function getProducts() {
  * @returns {number} The discount percentage
  */
 function calculateDiscount(initialPrice, finalPrice) {
+	console.log(initialPrice, finalPrice);
 	const discount = Math.round(
 		((initialPrice - finalPrice) / initialPrice) * 100
 	);
+
+	console.log({ discount });
 
 	return discount;
 }
@@ -106,9 +109,9 @@ class Proudcts {
 				return;
 			this.currentCategory = selectedCategory;
 
-            /**
-             * selecting the category variants and changing it's styles 
-             */
+			/**
+			 * selecting the category variants and changing it's styles
+			 */
 			categoriesVariants.forEach((x) => {
 				if (x.getAttribute("data-category") === this.currentCategory) {
 					if (!x.classList.contains("active"))
@@ -162,10 +165,10 @@ class Proudcts {
                         <div class="price-original">${(+productDetail.compare_at_price).toFixed(
 							2
 						)}</div>
-                        <div class="price-discount">${
-							(calculateDiscount(+productDetail.compare_at_price),
-							+productDetail.price)
-						}</div>
+                        <div class="price-discount">${calculateDiscount(
+							+productDetail.compare_at_price,
+							+productDetail.price
+						)}% Off</div>
                     </div>
     
                     <div class="add-to-cart">Add to Cart</div>
