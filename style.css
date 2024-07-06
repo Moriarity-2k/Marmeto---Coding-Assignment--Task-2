@@ -41,7 +41,6 @@ body {
 
 .categories {
 	display: flex;
-	background-color: var(--light-grey);
 	/* width: max-content; */
 	border-radius: 0.5rem;
 	margin-bottom: 45px;
@@ -52,17 +51,17 @@ body {
 }
 
 .category {
+	background-color: var(--light-grey);
 	font-weight: 600;
 	font-size: 1.6rem;
 	width: max-content;
 	padding: 0.9rem 8rem;
-	background-color: inherit;
 	cursor: pointer;
 }
 .category.active {
 	background-color: var(--color-black);
 	color: var(--color-white);
-	border-radius: 0.5rem;
+	border-radius: 0.4rem;
 }
 
 .products-container {
@@ -158,6 +157,16 @@ body {
 	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 	margin: 45px 0;
 	word-wrap: break-word;
+}
+
+.category-icon {
+	display: none;
+	height: 15px;
+	width: 15px;
+}
+
+.active .category-icon {
+	display: inline;
 }
 
 /* Medium level Devices */

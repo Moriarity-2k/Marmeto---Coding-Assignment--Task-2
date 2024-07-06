@@ -36,12 +36,9 @@ async function getProducts() {
  * @returns {number} The discount percentage
  */
 function calculateDiscount(initialPrice, finalPrice) {
-	console.log(initialPrice, finalPrice);
 	const discount = Math.round(
 		((initialPrice - finalPrice) / initialPrice) * 100
 	);
-
-	console.log({ discount });
 
 	return discount;
 }
@@ -96,7 +93,9 @@ class Proudcts {
 				(key) =>
 					`<div class="category ${
 						key === this.currentCategory ? "active" : ""
-					}" data-category="${key}">${key}</div>`
+					}" data-category="${key}">
+                    <img src="./icons/${key}.svg" style="" class="category-icon" /> 
+                    ${key}</div>`
 			)
 			.join("");
 		categoriesContainer.innerHTML = categoryHtml;
